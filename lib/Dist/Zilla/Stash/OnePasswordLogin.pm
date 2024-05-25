@@ -38,8 +38,13 @@ has _item => (
   init_arg => undef,
   lazy     => 1,
   default  => sub ($self) {
-    my $pw = Password::OnePassword::OPCLI->new;
-    $pw->get_item($self->_item_str);
+    my $one_pw = Password::OnePassword::OPCLI->new;
+    my $struct = $one_pw->get_item($self->_item_str);
+
+    my $field_aref = $struct->{fields};
+    my %fields = map {; $_->{id} => $_->{value} } @$field_aref;
+
+    return \%fields;
   },
 );
 
