@@ -5,11 +5,10 @@ package Dist::Zilla::Stash::OnePasswordLogin;
 
 This is a stash class, one of the less-often seen kinds of Dist::Zilla
 components.  It's expected that you'll use it for things that expect a "Login"
-stash credential, like the UploadToCPAN plugin.  Starting with a not-yet-made
-mid-2024 release of Dist::Zilla, you can use any Login credential (not just a
-PAUSE-specific) one for the UploadToCPAN plugin.  You need to configure the
-stash in your home directory's dzil configuration, probably
-C<~/.dzil/config.ini>, like this:
+stash credential, like the UploadToCPAN plugin.  Starting with Dist::Zilla
+v6.032, you can use any Login credential (not just a PAUSE-specific) one for
+the UploadToCPAN plugin.  You need to configure the stash in your home
+directory's dzil configuration, probably C<~/.dzil/config.ini>, like this:
 
   [%OnePasswordLogin / %PAUSE]
   item = op://Vault Name/PAUSE Credential Name
